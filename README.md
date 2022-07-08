@@ -3,7 +3,7 @@
 ![Screenshot](result.png)
 ### Function prototype
 ```c
-int	get_next_line(int fd);
+int	get_next_line(int fd)
 ```
 # Subject
 **The assignment is here!** [(link)](https://github.com/AtaullinShamil/42-get_next_line/blob/main/get_next_line_subject.pdf)
