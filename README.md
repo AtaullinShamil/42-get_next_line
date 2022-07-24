@@ -6,4 +6,4 @@
 int	get_next_line(int fd)
 ```
 # Subject
-**The assignment is here!** [(link)](https://github.com/AtaullinShamil/42-get_next_line/blob/main/includes/get_next_line_subject.pdf)
+**The assignment is here!** [(link)](http://github.com/AtaullinShamil/42-get_next_line/blob/main/includes/get_next_line_subject.pdf)
