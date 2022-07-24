@@ -1,12 +1,10 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: shamil <shamil@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/15 19:04:34 by ntojamur          #+#    #+#             */
-/*   Updated: 2021/12/19 06:12:58 by shamil           ###   ########.fr       */
+/*   get_next_line.h                                                          */
+/*                                                                            */
+/*   By: Ataullin Shamil                                                      */
+/*                                                                            */
+/*   Created: 2021/12/15                                                      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +19,10 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_proverka(char *str);
-char	*ft_strjoin_gnl(char	*s1, char	*s2);
+
+char	*ft_checker(char *str);
+char	*ft_strjoin_gnl(char *s1, char *s2);
 int		ft_strlen(char *s);
-int		ft_kol(char *str);
+int		ft_size(char *str);
 
 #endif

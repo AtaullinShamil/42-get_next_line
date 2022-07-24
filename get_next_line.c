@@ -1,12 +1,10 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: shamil <shamil@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/15 18:32:10 by ntojamur          #+#    #+#             */
-/*   Updated: 2021/12/22 20:56:56 by shamil           ###   ########.fr       */
+/*   get_next_line.c                                                          */
+/*                                                                            */
+/*   By: Ataullin Shamil                                                      */
+/*                                                                            */
+/*   Created: 2021/12/22                                                      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +46,7 @@ static char	*ft_cleaner(char *buffer)
 		return (NULL);
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
-	str = malloc(sizeof(char) * (i + ft_kol(buffer)));
+	str = malloc(sizeof(char) * (i + ft_size(buffer)));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -66,7 +64,7 @@ static char	*ft_cleaner(char *buffer)
 	return (str);
 }
 
-static char	*ft_reader_gnl(int fd, char *buffer)
+static char	*ft_reader(int fd, char *buffer)
 {
 	int		i;
 	char	*str;
@@ -75,7 +73,7 @@ static char	*ft_reader_gnl(int fd, char *buffer)
 	str = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!str)
 		return (NULL);
-	while (!ft_proverka(buffer) && i != 0)
+	while (!ft_checker(buffer) && i != 0)
 	{
 		i = read(fd, str, BUFFER_SIZE);
 		if (i == -1)
@@ -97,7 +95,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = ft_reader_gnl(fd, buffer);
+	buffer = ft_reader(fd, buffer);
 	if (!buffer)
 		return (NULL);
 	str = ft_cleaner(buffer);

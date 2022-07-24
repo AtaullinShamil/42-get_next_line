@@ -1,12 +1,10 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: shamil <shamil@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 16:17:39 by shamil            #+#    #+#             */
-/*   Updated: 2021/12/22 02:03:31 by shamil           ###   ########.fr       */
+/*   get_next_line_bonus.c                                                    */
+/*                                                                            */
+/*   By: Ataullin Shamil                                                      */
+/*                                                                            */
+/*   Created: 2021/12/21                                                      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +46,7 @@ static char	*ft_cleaner(char *buffer)
 		return (NULL);
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
-	str = malloc(sizeof(char) * (i + ft_kol(buffer)));
+	str = malloc(sizeof(char) * (i + ft_size(buffer)));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -75,7 +73,7 @@ static char	*ft_reader_gnl(int fd, char *buffer)
 	str = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!str)
 		return (NULL);
-	while (!ft_proverka(buffer) && i != 0)
+	while (!ft_checker(buffer) && i != 0)
 	{
 		i = read(fd, str, BUFFER_SIZE);
 		if (i == -1)

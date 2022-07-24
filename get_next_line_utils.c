@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: shamil <shamil@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/15 18:31:54 by ntojamur          #+#    #+#             */
-/*   Updated: 2021/12/23 14:52:37 by shamil           ###   ########.fr       */
+/*   get_next_line_utils.c                                                    */
+/*                                                                            */
+/*   By: Ataullin Shamil                                                      */
+/*                                                                            */
+/*   Created: 2021/12/23                                                      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_proverka(char *str)
+char	*ft_checker(char *str)
 {
 	int	i;
 
@@ -28,7 +26,7 @@ char	*ft_proverka(char *str)
 	return ((char *)&str[i]);
 }
 
-static	char	*ft_videlalka(char *str)
+static	char	*ft_malloc(char *str)
 {
 	str = malloc(sizeof(char) * 1);
 	if (!str)
@@ -37,14 +35,14 @@ static	char	*ft_videlalka(char *str)
 	return (str);
 }
 
-char	*ft_strjoin_gnl(char	*s1, char	*s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	int		i;
 	int		j;
 	char	*buffer;
 
 	if (!s1)
-		s1 = ft_videlalka(s1);
+		s1 = ft_malloc(s1);
 	if (!s1 || !s2)
 		return (NULL);
 	buffer = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
@@ -72,7 +70,7 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
-int	ft_kol(char *str)
+int	ft_size(char *str)
 {
 	int	i;
 
